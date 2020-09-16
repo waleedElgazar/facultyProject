@@ -1,6 +1,6 @@
 package Moedls;
 
-public class teachStaff {
+public class TeachStaff {
     private int id;
     private String name;
     private String nationalId;
@@ -9,7 +9,7 @@ public class teachStaff {
     private String gender;
     private String email;
 
-    public teachStaff(int id, String name, String nationalId, String phone, String jopTitle, String gender, String email) {
+    public TeachStaff(int id, String name, String nationalId, String phone, String jopTitle, String gender, String email) {
         this.id = id;
         this.name = name;
         this.nationalId = nationalId;

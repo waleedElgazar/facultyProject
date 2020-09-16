@@ -1,13 +1,13 @@
 package Moedls;
 
-public class Courses {
+public class Course {
     private int Course_id;
     private String name;
     private int hours;
     private String startTime;
     private String endTime;
 
-    public Courses(int course_id, String name, int hours, String startTime, String endTime) {
+    public Course(int course_id, String name, int hours, String startTime, String endTime) {
         Course_id = course_id;
         this.name = name;
         this.hours = hours;
