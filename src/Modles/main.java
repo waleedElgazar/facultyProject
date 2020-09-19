@@ -1,4 +1,4 @@
-package Moedls;
+package Modles;
 
 public class main {
     public static void main(String[] args) {
