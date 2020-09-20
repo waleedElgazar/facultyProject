@@ -5,6 +5,7 @@ import Models.Exam;
 import Models.Student;
 import Services.studentService;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import Dao.studentDao;
@@ -24,12 +25,17 @@ public class studentServiceImplemention implements studentService {
 
     @Override
     public void update(int id,Student student) {
-
+        dao.updateStudent(id,student);
     }
 
     @Override
     public void delete(int id) {
         dao.deleteStudent(id);
+    }
+
+    @Override
+    public boolean searchName(String name) throws SQLException {
+        return dao.serachwithName(name);
     }
 
     @Override

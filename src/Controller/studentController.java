@@ -4,6 +4,8 @@ import Models.Student;
 import Services.studentService;
 import serviceImplemention.studentServiceImplemention;
 
+import java.sql.SQLException;
+
 public class studentController {
    studentService studentService=new studentServiceImplemention();;
 
@@ -13,6 +15,14 @@ public class studentController {
 
     public void deleteStudent(int id){
         studentService.delete(id);
+    }
+
+    public void update(int id, Student student){
+        studentService.update(id,student);
+    }
+
+    public boolean searchwithName(String name) throws SQLException {
+        return studentService.searchName(name);
     }
 
 }

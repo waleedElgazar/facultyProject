@@ -40,4 +40,36 @@ public class studentDao {
            System.out.print(e);
        }
     }
+
+    public void updateStudent(int id,Student student){
+        try {
+            pre=connection.prepareStatement("update student set student.student_id = ? , student.name = ?, student.age = ?," +
+                    " student.address = ?, student.phone = ?" + ", student.gender = ?, student.email = ? " +
+                    ", student.first_year = ? , student.dep_id = ? " +
+                    "where student_id = "+id);
+            pre.setInt(1,student.getStudent_Id());
+            pre.setString(2,student.getName());
+            pre.setInt(3,student.getAge());
+            pre.setString(4,student.getAddress());
+            pre.setString(5,student.getPhone());
+            pre.setString(6,student.getGender());
+            pre.setString(7,student.getEmail());
+            pre.setString(8,student.getFirstYear());
+            pre.setInt(9,student.getDepartmentId());
+            pre.executeUpdate();
+        }catch (Exception e){
+            System.out.print(e);
+        }
+    }
+    public boolean serachwithName(String name)  {
+        boolean find=false;
+        try {
+            String sql="select * from student where faculty.name = "+name;
+            pre=connection.prepareStatement(sql);
+             find=pre.execute();
+        }catch (Exception e){
+            System.out.print(e);
+        }
+        return find;
+    }
 }
