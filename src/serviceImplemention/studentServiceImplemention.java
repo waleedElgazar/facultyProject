@@ -14,7 +14,7 @@ public class studentServiceImplemention implements studentService {
     studentDao dao=new studentDao();;
     @Override
     public void insertStudent(Student student) {
-        dao.addStudent(student);
+
     }
 
     @Override
@@ -25,17 +25,17 @@ public class studentServiceImplemention implements studentService {
 
     @Override
     public void update(int id,Student student) {
-        dao.updateStudent(id,student);
+
     }
 
     @Override
     public void delete(int id) {
-        dao.deleteStudent(id);
+
     }
 
     @Override
     public boolean searchName(String name) throws SQLException {
-        return dao.serachwithName(name);
+        return false;
     }
 
     @Override
