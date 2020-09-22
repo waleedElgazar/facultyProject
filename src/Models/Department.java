@@ -1,4 +1,4 @@
-package Moedls;
+package Models;
 
 public class Department {
     private int department_id;

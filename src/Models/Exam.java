@@ -1,4 +1,4 @@
-package Moedls;
+package Models;
 
 public class Exam {
     private int exam_id;

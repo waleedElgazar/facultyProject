@@ -1,4 +1,4 @@
-package Moedls;
+package Models;
 
 public class Courses {
     private int Course_id;
