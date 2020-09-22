@@ -30,6 +30,28 @@ public class studentDao {
         }
     }
 
+    public void update (int id, Student student){
+        try {
+            pre=connection.prepareStatement("UPDATE student set student.student_id=? ," +
+                    "student.name=? ,student.age=? ," +
+                    "student.address=? ,student.phone=? ," +
+                    "student.gender=? ,student.email=? ," +
+                    "student.first_year=? ,student.dep_id=?  WHERE student.student_id="+id);
+            pre.setInt(1,student.getStudent_Id());
+            pre.setString(2,student.getName());
+            pre.setInt(3,student.getAge());
+            pre.setString(4,student.getAddress());
+            pre.setString(5,student.getPhone());
+            pre.setString(6,student.getGender());
+            pre.setString(7,student.getEmail());
+            pre.setString(8,student.getFirstYear());
+            pre.setInt(9,student.getDepartmentId());
+            pre.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
 
 
 }

@@ -14,7 +14,7 @@ public class studentServiceImplemention implements studentService {
     studentDao dao=new studentDao();;
     @Override
     public void insertStudent(Student student) {
-
+        dao.addStudent(student);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class studentServiceImplemention implements studentService {
 
     @Override
     public void update(int id,Student student) {
-
+        dao.update(id,student);
     }
 
     @Override
