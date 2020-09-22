@@ -6,8 +6,8 @@ import java.sql.PreparedStatement;
 
  public class DBConnection {
 
-    public static synchronized void getConnection(){
-        Connection connection;
+    public static  Connection getConnection(){
+        Connection connection=null;
         PreparedStatement pre;
 
         try {
@@ -17,6 +17,7 @@ import java.sql.PreparedStatement;
         } catch (Exception e) {
             System.out.println(e);
         }
+        return connection;
     }
 
 
