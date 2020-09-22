@@ -1,7 +1,7 @@
-import Dao.Connectionclass;
+import Dao.DBConnection;
 
 public class main {
     public static void main(String[] args) {
-        Connectionclass.getConnection();
+        DBConnection.getConnection();
     }
 }
