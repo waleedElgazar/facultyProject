@@ -2,7 +2,6 @@ package serviceImplemention;
 
 import Models.*;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import Dao.studentDao;
@@ -37,8 +36,8 @@ public class studentServiceImplemention implements studentService {
     }
 
     @Override
-    public boolean searchName(String name) throws SQLException {
-        return false;
+    public List<Student> searchName(String name)  {
+        return dao.searchName(name);
     }
 
     @Override

@@ -5,6 +5,7 @@ import Services.*;
 import serviceImplemention.studentServiceImplemention;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class studentController {
    studentService studentService=new studentServiceImplemention();;
@@ -21,7 +22,7 @@ public class studentController {
         studentService.update(id,student);
     }
 
-    public boolean searchwithName(String name) throws SQLException {
+    public List<Student> searchwithName(String name) {
         return studentService.searchName(name);
     }
 

@@ -1,9 +1,9 @@
 package Dao;
 import Models.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class studentDao {
     PreparedStatement pre;
@@ -62,6 +62,40 @@ public class studentDao {
         }
         if (del!=0) System.out.printf("deleted");
         else System.out.println("not found");
+    }
+
+    public List<Student> searchName(String name){
+        List<Student> students =new ArrayList<>();
+        ResultSet resultSet ;
+        try {
+            pre=connection.prepareStatement("select * from student where student.name = ?");
+            pre.setString(1, name);
+            resultSet =pre.executeQuery();
+            if (!resultSet.first()) {
+                System.out.println("Not found");
+            }
+            else {
+                do{
+                    Student student=new Student(
+                            resultSet.getInt("student_Id"),
+                            resultSet.getNString("name"),
+                            resultSet.getInt("age"),
+                            resultSet.getNString("address"),
+                            resultSet.getNString("phone"),
+                            resultSet.getNString("gender"),
+                            resultSet.getNString("gender"),
+                            resultSet.getNString("first_year"),
+                            resultSet.getInt("dep_id")
+                    );
+                    students.add(student);
+                    System.out.println(student);
+                }while (resultSet.next());
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return students;
     }
 
 }
