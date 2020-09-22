@@ -1,7 +1,7 @@
 package Controller;
 
-import Models.Student;
-import Services.studentService;
+import Models.*;
+import Services.*;
 import serviceImplemention.studentServiceImplemention;
 
 import java.sql.SQLException;

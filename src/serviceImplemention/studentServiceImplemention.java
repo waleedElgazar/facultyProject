@@ -1,17 +1,16 @@
 package serviceImplemention;
 
-import Models.Courses;
-import Models.Exam;
-import Models.Student;
-import Services.studentService;
+import Models.*;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import Dao.studentDao;
+import Services.studentService;
 
 public class studentServiceImplemention implements studentService {
     studentDao dao=new studentDao();;
+
     @Override
     public void insertStudent(Student student) {
         dao.addStudent(student);
@@ -19,12 +18,11 @@ public class studentServiceImplemention implements studentService {
 
     @Override
     public ArrayList<Student> getAllStudent() {
-
         return null;
     }
 
     @Override
-    public void update(int id,Student student) {
+    public void update(int id, Student student) {
         dao.update(id,student);
     }
 
@@ -34,12 +32,12 @@ public class studentServiceImplemention implements studentService {
     }
 
     @Override
-    public boolean searchName(String name) throws SQLException {
+    public boolean search(String phone) {
         return false;
     }
 
     @Override
-    public boolean search(String phone) {
+    public boolean searchName(String name) throws SQLException {
         return false;
     }
 
@@ -62,4 +60,5 @@ public class studentServiceImplemention implements studentService {
     public Exam getTopExam(Student student) {
         return null;
     }
+
 }

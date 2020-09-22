@@ -1,7 +1,5 @@
 package Dao;
-
-import Models.Student;
-
+import Models.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
