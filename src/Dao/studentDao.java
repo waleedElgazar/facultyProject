@@ -52,6 +52,18 @@ public class studentDao {
         }
     }
 
+    public void deleteStudent(int id){
+        int del=0;
+        try {
+            String sql="delete from student where student_id = " + id;
+            Statement statement=connection.createStatement();
+            del=statement.executeUpdate(sql);
 
+        }catch (Exception e){
+            System.out.print(e);
+        }
+        if (del!=0) System.out.printf("deleted");
+        else System.out.println("not found");
+    }
 
 }

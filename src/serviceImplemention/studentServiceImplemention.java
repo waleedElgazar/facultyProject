@@ -30,7 +30,7 @@ public class studentServiceImplemention implements studentService {
 
     @Override
     public void delete(int id) {
-
+        dao.deleteStudent(id);
     }
 
     @Override
