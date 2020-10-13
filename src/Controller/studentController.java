@@ -5,6 +5,7 @@ import Services.*;
 import serviceImplemention.studentServiceImplemention;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class studentController {
@@ -12,6 +13,10 @@ public class studentController {
 
     public void addStudent(Student student){
         studentService.insertStudent(student);
+    }
+
+    public List<Student> getAllStudent(){
+        return studentService.getAllStudent();
     }
 
     public void deleteStudent(int id){
@@ -24,6 +29,18 @@ public class studentController {
 
     public List<Student> searchwithName(String name) {
         return studentService.searchName(name);
+    }
+
+    public List<Student> searchwithAge(int age) {
+        return studentService.search(age);
+    }
+
+    public List<Courses> getCoursesWithDegree(int degree) {
+        return studentService.getCourses(degree);
+    }
+
+    public List<Courses> getCoursesWithStudentName(String name) {
+        return studentService.getCourses(name);
     }
 
 }

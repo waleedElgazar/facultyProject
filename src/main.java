@@ -1,9 +1,10 @@
-import Controller.studentController;
-import Models.Student;
+import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-       studentController studentController=new studentController();
-       studentController.searchwithName("waleed");
+
+        Scanner in=new Scanner(System.in);
+
+
     }
 }

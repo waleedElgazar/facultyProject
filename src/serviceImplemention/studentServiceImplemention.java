@@ -16,8 +16,8 @@ public class studentServiceImplemention implements studentService {
     }
 
     @Override
-    public ArrayList<Student> getAllStudent() {
-        return null;
+    public List<Student> getAllStudent() {
+        return dao.getAllStudents();
     }
 
     @Override
@@ -41,18 +41,18 @@ public class studentServiceImplemention implements studentService {
     }
 
     @Override
-    public boolean search(int age) {
-        return false;
+    public List<Student> search(int age) {
+        return dao.searchage(age);
     }
 
     @Override
     public List<Courses> getCourses(int degree) {
-        return null;
+        return dao.getCourses(degree);
     }
 
     @Override
-    public List<Courses> getCourses(Student student) {
-        return null;
+    public List<Courses> getCourses(String name) {
+        return dao.getCourses(name);
     }
 
     @Override
