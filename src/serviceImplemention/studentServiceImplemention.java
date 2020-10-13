@@ -2,7 +2,6 @@ package serviceImplemention;
 
 import Models.*;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import Dao.studentDao;
@@ -17,8 +16,8 @@ public class studentServiceImplemention implements studentService {
     }
 
     @Override
-    public ArrayList<Student> getAllStudent() {
-        return null;
+    public List<Student> getAllStudent() {
+        return dao.getAllStudents();
     }
 
     @Override
@@ -37,23 +36,23 @@ public class studentServiceImplemention implements studentService {
     }
 
     @Override
-    public boolean searchName(String name) throws SQLException {
-        return false;
+    public List<Student> searchName(String name)  {
+        return dao.searchName(name);
     }
 
     @Override
-    public boolean search(int age) {
-        return false;
+    public List<Student> search(int age) {
+        return dao.searchage(age);
     }
 
     @Override
     public List<Courses> getCourses(int degree) {
-        return null;
+        return dao.getCourses(degree);
     }
 
     @Override
-    public List<Courses> getCourses(Student student) {
-        return null;
+    public List<Courses> getCourses(String name) {
+        return dao.getCourses(name);
     }
 
     @Override

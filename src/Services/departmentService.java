@@ -7,14 +7,14 @@ import java.util.List;
 
 public interface departmentService {
 
-    public void insertDepartment (Department Department );
+    public void insertDepartment (Department department );
     public List<Department > getAllDepartment ();
-    public boolean update(Department  Department );
-    public boolean delete(Department  Department );
-    public int getCoursesWithDepartment(Department departmen);
-    public int getStudentsWithDepartment(Department departmen);
-    public boolean search(String phone);
-    public boolean search(int id);
+    public boolean update(int id, Department department);
+    public boolean delete(int id );
+    public List<Courses> getCoursesinDepartment(int id);
+    public List<Student> getStudentsWithDepartment(int id);
+    public Department search(String name);
+    public Department search(int id);
 
 
 }
