@@ -1,34 +1,48 @@
-package src.Controller;
+package Controller;
 
-import DAo.StudentDao;
+import Models.Courses;
 import Models.Student;
-import ServiceImpli.StudentServiceImpli;
-import service.StudentService;
+import Services.studentService;
+import serviceImplemention.studentServiceImplemention;
 
 
 import java.util.List;
 
-public class StudentController {
+public class studentController {
 
-    StudentService studentService;
-
-    public void inserStudent(Student student) {
-        studentService = new StudentServiceImpli();
-        studentService.CreateNewStudent(student);
+    studentService studentService = new studentServiceImplemention();
 
 
+    public void addStudent(Student student) {
+        studentService.insertStudent(student);
     }
 
-    public List<Student> DisblayAllStudent() {
-        studentService = new StudentServiceImpli();
-        return studentService.DisplayAllStudent();
+    public List<Student> getAllStudent() {
+        return studentService.getAllStudent();
     }
 
-    public static void main(String[] args) {
-        Student s = new Student(3, "mohamed", 22, "tanta", "010", "male", "mmmm", "2012", 1);
-        StudentDao S1 = new StudentDao();
-        //S1.insertStudent(s);
-          //S1.displayAllStudent();
+    public void deleteStudent(int id) {
+        studentService.delete(id);
+    }
+
+    public void update(int id, Student student) {
+        studentService.update(id, student);
+    }
+
+    public List<Student> searchwithName(String name) {
+        return studentService.searchName(name);
+    }
+
+    public List<Student> searchwithAge(int age) {
+        return studentService.search(age);
+    }
+
+    public List<Courses> getCoursesWithDegree(int degree) {
+        return studentService.getCourses(degree);
+    }
+
+    public List<Courses> getCoursesWithStudentName(String name) {
+        return studentService.getCourses(name);
 
     }
 }
