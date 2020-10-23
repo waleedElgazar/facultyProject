@@ -1,16 +1,19 @@
 import Dao.DBConnection;
 import Models.birth;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Scanner;
 
 public class main {
 
     public static void main(String[] args) {
-        insert();
+      /*  insert();
        while (true){
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
             LocalTime time=LocalTime.now().plusMinutes(1);
@@ -24,7 +27,17 @@ public class main {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }
+        }*/
+
+        Runnable task=new FileTask();
+        Thread thread=new Thread(task);
+        Thread thread1=new Thread(task);
+        Thread thread2=new Thread(task);
+        thread.start();
+        thread1.start();
+        thread2.start();
+        System.out.println(Thread.currentThread().getName());
+
     }
 
     public static void insert(){
@@ -59,6 +72,29 @@ public class main {
                 }
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
+            }
+        }
+    }
+
+    static class FileTask implements Runnable{
+
+        @Override
+        public void run() {
+            File myObj = new File("C:\\Users\\smart\\IdeaProjects\\facultyProject\\src\\test.txt");
+            Scanner myReader;
+            {
+                try {
+                    myReader = new Scanner(myObj);
+                    while (myReader.hasNextLine()) {
+                        String data = myReader.nextLine();
+                        System.out.println(data);
+                       // break;
+                        System.out.println(Thread.currentThread().getName());
+                    }
+                    myReader.close();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
