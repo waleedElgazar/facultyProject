@@ -42,5 +42,4 @@ public class threadTask {
         }
     return list;
     }
-
 }
